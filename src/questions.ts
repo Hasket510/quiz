@@ -1,6 +1,8 @@
+import { EPics } from './assets/Pic'
+
 export const questions = [
 	{
-		title:
+		question:
 			'Warcraft III помнят многие, Warcraft II — избранные, а оригинал на своих системниках застали и вовсе единицы. Слабо вспомнить, каким было полное название первой части?',
 		variants: [
 			'Warcraft: Of Orcs and Men',
@@ -9,15 +11,17 @@ export const questions = [
 			'Warcraft. Просто Warcraft.',
 		],
 		correct: 1,
+		pic: EPics.warCraftQuestion1,
 	},
 	{
-		title:
+		question:
 			'Голливудский фильм Warcraft посмотрели даже те, кто игровой вселенной сроду не увлекался. А знаете ли вы, с событиями какой части сериала связан сюжет экранизации?',
 		variants: ['Первой', 'Второй', 'Третьей', 'World of Warcraft'],
 		correct: 0,
+		pic: EPics.warCraftQuestion2,
 	},
 	{
-		title:
+		question:
 			'В одной из кат-сцен Warcraft III: Reign of Chaos явившийся в Лордерон пророк предложил спасти народ от надвигающейся угрозы именно таким образом:',
 		variants: [
 			'Уничтожить ледяной меч Фростморн',
@@ -26,9 +30,10 @@ export const questions = [
 			'Подготовиться к войне, пока не поздно',
 		],
 		correct: 2,
+		pic: EPics.warCraftQuestion3,
 	},
 	{
-		title:
+		question:
 			'Впрочем, не послушали пророка ещё и потому, что проблем хватало и без него. Помимо странных перемещений орков, на королевство обрушилась и другая напасть, а именно...',
 		variants: [
 			'Песчаная буря',
@@ -37,9 +42,10 @@ export const questions = [
 			'Странная чума',
 		],
 		correct: 3,
+		pic: EPics.warCraftQuestion4,
 	},
 	{
-		title:
+		question:
 			'Blizzard — большие любители пасхалок: персонажей их вселенных в Warcraft III можно встретить немало. Есть среди них и герой фильма, не имеющий отношения к франшизам. О какой ленте идёт речь?',
 		variants: [
 			'Бойцовский клуб',
@@ -48,9 +54,10 @@ export const questions = [
 			'Зловещие мертвецы',
 		],
 		correct: 0,
+		pic: EPics.warCraftQuestion5,
 	},
 	{
-		title:
+		question:
 			'Пройти The Frozen Throne на высоком уровне сложности удалось не всем. Зато тех, кто выдержал это испытание, ждал приятный сюрприз, а именно...',
 		variants: [
 			'Получение всех чит-кодов для игры',
@@ -59,15 +66,17 @@ export const questions = [
 			'Новая тема оформления главного меню',
 		],
 		correct: 1,
+		pic: EPics.warCraftQuestion6,
 	},
 	{
-		title:
+		question:
 			'«Долгоиграющие» релизы встретишь нечасто — но иногда разработчики поддерживают своё детище удивительно долго. Последний официальный патч для третьего «Варкрафта» был выпущен в...',
 		variants: ['2012 году', '2014 году', '2016 году', '2018 году'],
 		correct: 3,
+		pic: EPics.warCraftQuestion7,
 	},
 	{
-		title:
+		question:
 			'Локализация Warcraft III настолько хороша, что даже сегодня даст фору многим конкурентам. Но одна часто повторяющаяся фраза была настолько навязчивой, что давно стала мемом. Это, конечно же...',
 		variants: [
 			'...Во имя правосудия!',
@@ -76,9 +85,10 @@ export const questions = [
 			'...Они не уйдут!',
 		],
 		correct: 2,
+		pic: EPics.warCraftQuestion8,
 	},
 	{
-		title:
+		question:
 			'К слову о мемах. Знаменитый чит-код для Reign of Chaos, дающий мгновенную победу, отсылает к одному из первых интернет-мемов. Впервые это словосочетание появилось в...',
 		variants: [
 			'Command & Conquer: Red Alert',
@@ -87,9 +97,10 @@ export const questions = [
 			'Jagged Alliance',
 		],
 		correct: 2,
+		pic: EPics.warCraftQuestion9,
 	},
 	{
-		title:
+		question:
 			'В финале The Frozen Throne перед игроком появляется… Правильно, трон, вокруг которого и закручен сюжет кампании. Но интересует главного героя не он, а спрятанный внутри артефакт. Имя ему...',
 		variants: [
 			'Корона Неруба',
@@ -98,5 +109,6 @@ export const questions = [
 			'Щит Саргераса',
 		],
 		correct: 1,
+		pic: EPics.warCraftQuestion10,
 	},
 ]

@@ -8,7 +8,7 @@
 		height: 100%;
 		border-radius: 30px;
 		width: 80%;
-		background: rgb(195, 10, 10);
+		background: rgb(243, 218, 218);
 		transition: all 0.3s ease-in-out;
 		background: linear-gradient(
 			90deg,
@@ -16,6 +16,12 @@
 			rgba(0, 98, 255, 1) 100%
 		);
 	}
+}
+
+img {
+	margin-bottom: 20px;
+	max-width: 500px;
+	border-radius: 30px;
 }
 
 h3 {

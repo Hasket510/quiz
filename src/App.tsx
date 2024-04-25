@@ -19,9 +19,10 @@ function App() {
 			{step !== questions.length ? (
 				<Game
 					step={step}
-					title={question.title}
+					quest={question.question}
 					variants={question.variants}
 					clickOnVariant={clickOnVariant}
+					pic={question.pic}
 				/>
 			) : (
 				<Result correct={correct} length={questions.length} />

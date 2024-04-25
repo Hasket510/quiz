@@ -1,4 +1,4 @@
-import logo from '../../assets/pic-result.jpg'
+import { EPics, Pic } from '../../assets/Pic'
 import styles from './result.module.scss'
 
 interface IResult {
@@ -8,10 +8,10 @@ interface IResult {
 export function Result({ correct, length }: IResult) {
 	return (
 		<div className={styles.result}>
-			<img src={logo} />
-			<h2>
+			<Pic name={EPics.warCraftResult}></Pic>
+			<h3>
 				Правильных ответов: {correct} из {length}
-			</h2>
+			</h3>
 			<a href='/'>
 				<button>Попробовать снова</button>
 			</a>

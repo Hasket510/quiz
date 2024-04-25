@@ -1,14 +1,16 @@
+import { EPics, Pic } from '../../assets/Pic'
 import { questions } from '../../questions'
 import styles from './game.module.scss'
 
 interface IGame {
 	step: number
-	title: string
+	quest: string
+	pic: EPics
 	variants: string[]
 	clickOnVariant: (index: number) => void
 }
 
-export function Game({ title, variants, step, clickOnVariant }: IGame) {
+export function Game({ quest, variants, step, clickOnVariant, pic }: IGame) {
 	const percentage = Math.round((step / questions.length) * 100)
 
 	return (
@@ -19,7 +21,8 @@ export function Game({ title, variants, step, clickOnVariant }: IGame) {
 					className={styles.progress__inner}
 				></div>
 			</div>
-			<h3>{title}</h3>
+			<Pic name={pic}></Pic>
+			<h3>{quest}</h3>
 			<ul>
 				{variants.map((variant, index) => (
 					<li onClick={() => clickOnVariant(index)} key={variant}>
