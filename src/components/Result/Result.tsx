@@ -12,7 +12,7 @@ export function Result({ correct, length }: IResult) {
 			<h3>
 				Правильных ответов: {correct} из {length}
 			</h3>
-			<a href='/'>
+			<a href='/Quiz/'>
 				<button>Попробовать снова</button>
 			</a>
 		</div>
