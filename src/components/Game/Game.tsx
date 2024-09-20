@@ -1,6 +1,5 @@
 import { EPics, Pic } from '../../assets/Pic'
-import { questions } from '../../questions'
-import styles from './game.module.scss'
+import styles from './Game.module.scss'
 
 interface IGame {
 	step: number
@@ -11,17 +10,17 @@ interface IGame {
 }
 
 export function Game({ quest, variants, step, clickOnVariant, pic }: IGame) {
-	const percentage = Math.round((step / questions.length) * 100)
+	const percentage = Math.round((step / 10) * 100)
 
 	return (
-		<>
+		<section>
 			<div className={styles.progress}>
 				<div
 					style={{ width: `${percentage}%` }}
 					className={styles.progress__inner}
 				></div>
 			</div>
-			<Pic name={pic}></Pic>
+			<Pic name={pic} />
 			<h3>{quest}</h3>
 			<ul>
 				{variants.map((variant, index) => (
@@ -30,6 +29,6 @@ export function Game({ quest, variants, step, clickOnVariant, pic }: IGame) {
 					</li>
 				))}
 			</ul>
-		</>
+		</section>
 	)
 }

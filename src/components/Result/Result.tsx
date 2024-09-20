@@ -1,20 +1,24 @@
 import { EPics, Pic } from '../../assets/Pic'
-import styles from './result.module.scss'
+import styles from './Result.module.scss'
 
 interface IResult {
 	correct: number
 	length: number
+	select: string
 }
-export function Result({ correct, length }: IResult) {
+export function Result({ correct, length, select }: IResult) {
+	const resultPic =
+		select === 'warcraft' ? EPics.warCraftResult : EPics.diabloResult
+
 	return (
-		<div className={styles.result}>
-			<Pic name={EPics.warCraftResult}></Pic>
-			<h3>
+		<section className={styles.result}>
+			<Pic name={resultPic} />
+			<p>
 				Правильных ответов: {correct} из {length}
-			</h3>
+			</p>
 			<a href='/Quiz/'>
 				<button>Попробовать снова</button>
 			</a>
-		</div>
+		</section>
 	)
 }

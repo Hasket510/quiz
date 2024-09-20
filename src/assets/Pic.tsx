@@ -1,3 +1,14 @@
+import dPic1 from './diablo_q1.jpg'
+import dPic10 from './diablo_q10.jpg'
+import dPic2 from './diablo_q2.jpg'
+import dPic3 from './diablo_q3.jpg'
+import dPic4 from './diablo_q4.jpg'
+import dPic5 from './diablo_q5.jpg'
+import dPic6 from './diablo_q6.jpg'
+import dPic7 from './diablo_q7.jpg'
+import dPic8 from './diablo_q8.jpg'
+import dPic9 from './diablo_q9.jpg'
+import dPicResult from './diablo_result.jpg'
 import wPic1 from './warcraft_q1.jpg'
 import wPic10 from './warcraft_q10.jpg'
 import wPic2 from './warcraft_q2.jpg'
@@ -22,6 +33,17 @@ const pics = {
 	warCraftQuestion9: wPic9,
 	warCraftQuestion10: wPic10,
 	warCraftResult: wPicResult,
+	diabloQuestion1: dPic1,
+	diabloQuestion2: dPic2,
+	diabloQuestion3: dPic3,
+	diabloQuestion4: dPic4,
+	diabloQuestion5: dPic5,
+	diabloQuestion6: dPic6,
+	diabloQuestion7: dPic7,
+	diabloQuestion8: dPic8,
+	diabloQuestion9: dPic9,
+	diabloQuestion10: dPic10,
+	diabloResult: dPicResult,
 }
 
 export enum EPics {
@@ -36,6 +58,17 @@ export enum EPics {
 	warCraftQuestion9 = 'warCraftQuestion9',
 	warCraftQuestion10 = 'warCraftQuestion10',
 	warCraftResult = 'warCraftResult',
+	diabloQuestion1 = 'diabloQuestion1',
+	diabloQuestion2 = 'diabloQuestion2',
+	diabloQuestion3 = 'diabloQuestion3',
+	diabloQuestion4 = 'diabloQuestion4',
+	diabloQuestion5 = 'diabloQuestion5',
+	diabloQuestion6 = 'diabloQuestion6',
+	diabloQuestion7 = 'diabloQuestion7',
+	diabloQuestion8 = 'diabloQuestion8',
+	diabloQuestion9 = 'diabloQuestion9',
+	diabloQuestion10 = 'diabloQuestion10',
+	diabloResult = 'diabloResult',
 }
 
 interface IPicsProps {
@@ -43,5 +76,5 @@ interface IPicsProps {
 }
 
 export function Pic({ name }: IPicsProps) {
-	return <img src={pics[name]} alt={pics[name]} />
+	return <img src={pics[name]} alt={name} />
 }
