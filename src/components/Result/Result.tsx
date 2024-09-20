@@ -8,7 +8,11 @@ interface IResult {
 }
 export function Result({ correct, length, select }: IResult) {
 	const resultPic =
-		select === 'warcraft' ? EPics.warCraftResult : EPics.diabloResult
+		select === 'warcraft'
+			? EPics.warCraftResult
+			: select === 'diablo'
+			? EPics.diabloResult
+			: EPics.starCraftResult
 
 	return (
 		<section className={styles.result}>

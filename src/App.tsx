@@ -11,7 +11,11 @@ function App() {
 	const [selectedTest, setSelectedTest] = useState('warcraft')
 	const [showTestSelector, setShowTestSelector] = useState(true)
 	const question =
-		selectedTest === 'diablo' ? questions.diablo : questions.warcraft
+		selectedTest === 'diablo'
+			? questions.diablo
+			: selectedTest === 'warcraft'
+			? questions.warcraft
+			: questions.starcraft
 	const clickOnVariant = (index: number) => {
 		if (index === question[step].correct) {
 			setCorrect(correct + 1)

@@ -9,6 +9,17 @@ import dPic7 from './diablo_q7.jpg'
 import dPic8 from './diablo_q8.jpg'
 import dPic9 from './diablo_q9.jpg'
 import dPicResult from './diablo_result.jpg'
+import sPic1 from './starcraft_q1.jpg'
+import sPic10 from './starcraft_q10.jpg'
+import sPic2 from './starcraft_q2.jpg'
+import sPic3 from './starcraft_q3.jpg'
+import sPic4 from './starcraft_q4.jpg'
+import sPic5 from './starcraft_q5.jpg'
+import sPic6 from './starcraft_q6.jpg'
+import sPic7 from './starcraft_q7.jpg'
+import sPic8 from './starcraft_q8.jpg'
+import sPic9 from './starcraft_q9.jpg'
+import sPicResult from './starcraft_result.jpg'
 import wPic1 from './warcraft_q1.jpg'
 import wPic10 from './warcraft_q10.jpg'
 import wPic2 from './warcraft_q2.jpg'
@@ -44,6 +55,17 @@ const pics = {
 	diabloQuestion9: dPic9,
 	diabloQuestion10: dPic10,
 	diabloResult: dPicResult,
+	starCraftQuestion1: sPic1,
+	starCraftQuestion2: sPic2,
+	starCraftQuestion3: sPic3,
+	starCraftQuestion4: sPic4,
+	starCraftQuestion5: sPic5,
+	starCraftQuestion6: sPic6,
+	starCraftQuestion7: sPic7,
+	starCraftQuestion8: sPic8,
+	starCraftQuestion9: sPic9,
+	starCraftQuestion10: sPic10,
+	starCraftResult: sPicResult,
 }
 
 export enum EPics {
@@ -69,6 +91,17 @@ export enum EPics {
 	diabloQuestion9 = 'diabloQuestion9',
 	diabloQuestion10 = 'diabloQuestion10',
 	diabloResult = 'diabloResult',
+	starCraftQuestion1 = 'starCraftQuestion1',
+	starCraftQuestion2 = 'starCraftQuestion2',
+	starCraftQuestion3 = 'starCraftQuestion3',
+	starCraftQuestion4 = 'starCraftQuestion4',
+	starCraftQuestion5 = 'starCraftQuestion5',
+	starCraftQuestion6 = 'starCraftQuestion6',
+	starCraftQuestion7 = 'starCraftQuestion7',
+	starCraftQuestion8 = 'starCraftQuestion8',
+	starCraftQuestion9 = 'starCraftQuestion9',
+	starCraftQuestion10 = 'starCraftQuestion10',
+	starCraftResult = 'starCraftResult',
 }
 
 interface IPicsProps {

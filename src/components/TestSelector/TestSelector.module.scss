@@ -48,5 +48,9 @@
 		&__diablo {
 			@include button('../../assets/diablo_choice.jpg');
 		}
+
+		&__starcraft {
+			@include button('../../assets/starcraft_choice.jpg');
+		}
 	}
 }

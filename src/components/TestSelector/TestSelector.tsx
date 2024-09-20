@@ -4,7 +4,7 @@ interface ITestSelector {
 	onSelect: (test: string) => void
 }
 
-const worlds = ['warcraft', 'diablo']
+const worlds = ['warcraft', 'diablo', 'starcraft']
 
 export function TestSelector({ onSelect }: ITestSelector) {
 	return (
