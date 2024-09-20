@@ -6,11 +6,19 @@ interface IGame {
 	quest: string
 	pic: EPics
 	variants: string[]
+	length: number
 	clickOnVariant: (index: number) => void
 }
 
-export function Game({ quest, variants, step, clickOnVariant, pic }: IGame) {
-	const percentage = Math.round((step / 10) * 100)
+export function Game({
+	quest,
+	variants,
+	step,
+	clickOnVariant,
+	pic,
+	length,
+}: IGame) {
+	const percentage = Math.round((step / length) * 100)
 
 	return (
 		<section>

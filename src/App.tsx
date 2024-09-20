@@ -37,6 +37,7 @@ function App() {
 						variants={question[step].variants}
 						clickOnVariant={clickOnVariant}
 						pic={question[step].pic}
+						length={question.length}
 					/>
 				) : (
 					<Result
