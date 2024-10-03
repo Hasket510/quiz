@@ -1,6 +1,6 @@
 # Quiz
 
-Warcraft 3 online test
+Online tests on Blizzard universes
 
 ## Running the app
 

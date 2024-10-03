@@ -1,24 +1,36 @@
-import { EPics, Pic } from '../../assets/Pic'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Pic } from '../../assets/Pic'
+import { questions } from '../../questions'
 import styles from './Game.module.scss'
 
 interface IGame {
-	step: number
-	quest: string
-	pic: EPics
-	variants: string[]
-	length: number
-	clickOnVariant: (index: number) => void
+	test: string
 }
 
-export function Game({
-	quest,
-	variants,
-	step,
-	clickOnVariant,
-	pic,
-	length,
-}: IGame) {
-	const percentage = Math.round((step / length) * 100)
+export function Game({ test }: IGame) {
+	const questionList =
+		test === 'diablo'
+			? questions.diablo
+			: test === 'starcraft'
+			? questions.starcraft
+			: questions.warcraft
+
+	const [step, setStep] = useState(0)
+	const [correct, setCorrect] = useState(0)
+	const nav = useNavigate()
+
+	const percentage = Math.round((step / questionList.length) * 100)
+
+	const choiceVariant = (index: number) => {
+		if (index === questionList[step].correct) {
+			setCorrect(prevCorrect => prevCorrect + 1)
+		}
+		if (step === questionList.length - 1) {
+			nav(`/result?correct=${correct}&length=${questionList.length}`)
+		}
+		setStep(step + 1)
+	}
 
 	return (
 		<section>
@@ -28,11 +40,11 @@ export function Game({
 					className={styles.progress__inner}
 				></div>
 			</div>
-			<Pic name={pic} />
-			<h3>{quest}</h3>
+			<Pic name={questionList[step].pic} />
+			<h3>{questionList[step].question}</h3>
 			<ul>
-				{variants.map((variant, index) => (
-					<li onClick={() => clickOnVariant(index)} key={variant}>
+				{questionList[step].variants.map((variant, index) => (
+					<li onClick={() => choiceVariant(index)} key={variant}>
 						{variant}
 					</li>
 				))}

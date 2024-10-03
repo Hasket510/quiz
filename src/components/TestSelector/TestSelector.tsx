@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './TestSelector.module.scss'
 
 interface ITestSelector {
@@ -13,12 +14,13 @@ export function TestSelector({ onSelect }: ITestSelector) {
 			<ul className={styles.list}>
 				{worlds.map(test => (
 					<li className={styles.item} key={test}>
-						<button
-							className={`${styles[`button__${test}`]}`}
+						<Link
+							to={`/${test}`}
+							className={`${styles[`link__${test}`]}`}
 							onClick={() => onSelect(test)}
 						>
 							{test}
-						</button>
+						</Link>
 					</li>
 				))}
 			</ul>

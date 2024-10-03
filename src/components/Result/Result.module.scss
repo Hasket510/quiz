@@ -1,15 +1,16 @@
 .result {
 	text-align: center;
 
-	button {
-		font-weight: bold;
-		border-radius: 30px;
-		border: 0;
+	.link {
 		padding: 15px 30px;
+		border: 0;
+		border-radius: 30px;
+		font-weight: bold;
 		font-size: 20px;
 		background-color: #0800ff;
 		color: #fff;
 		cursor: pointer;
+		text-decoration: none;
 	}
 
 	p {
