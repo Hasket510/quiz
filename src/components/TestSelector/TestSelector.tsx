@@ -15,7 +15,7 @@ export function TestSelector({ onSelect }: ITestSelector) {
 				{worlds.map(test => (
 					<li className={styles.item} key={test}>
 						<Link
-							to={`/${test}`}
+							to={`/${test}/?question=1`}
 							className={`${styles[`link__${test}`]}`}
 							onClick={() => onSelect(test)}
 						>
