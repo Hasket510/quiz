@@ -7,7 +7,7 @@ Online tests on Blizzard universes
 1. clone
 
 ```
-git clone https://github.com/Hasket510/Quiz
+git clone https://github.com/Hasket510/quiz
 ```
 
 2. go in to project
@@ -30,4 +30,4 @@ npm run dev
 
 ## Deploy
 
-https://hasket510.github.io/Quiz/
+https://hasket510.github.io/quiz/
