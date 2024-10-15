@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Pic } from '../../assets/Pic'
+import { Pic } from '../../components/Pic'
 import { questions } from '../../questions'
 import styles from './Game.module.scss'
 
@@ -48,10 +48,14 @@ export function Game({ test }: IGame) {
 				></div>
 			</div>
 			<Pic name={questionList(test)[step].pic} />
-			<h3>{questionList(test)[step].question}</h3>
-			<ul>
+			<h3 className={styles.question}>{questionList(test)[step].question}</h3>
+			<ul className={styles.questionList}>
 				{questionList(test)[step].variants.map((variant, index) => (
-					<li onClick={() => choiceVariant(index)} key={variant}>
+					<li
+						className={styles.variant}
+						onClick={() => choiceVariant(index)}
+						key={variant}
+					>
 						{variant}
 					</li>
 				))}

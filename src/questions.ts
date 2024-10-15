@@ -1,4 +1,4 @@
-import { EPics } from './assets/Pic'
+import { EPics } from './components/Pic'
 
 export const questions = {
 	warcraft: [

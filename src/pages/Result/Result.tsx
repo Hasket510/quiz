@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { EPics, Pic } from '../../assets/Pic'
+import { EPics, Pic } from '../../components/Pic'
 import styles from './Result.module.scss'
 
 interface IResult {
