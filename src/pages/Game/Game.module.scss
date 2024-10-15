@@ -8,7 +8,6 @@
 		height: 100%;
 		border-radius: 30px;
 		width: 80%;
-		background: rgb(243, 218, 218);
 		transition: all 0.3s ease-in-out;
 		background: linear-gradient(
 			90deg,
@@ -25,8 +24,7 @@ img {
 }
 
 .question {
-	margin: 0;
-	margin-bottom: 20px;
+	margin: 0 0 20px 0;
 }
 
 .questionList {
