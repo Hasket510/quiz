@@ -16,13 +16,13 @@ git clone https://github.com/Hasket510/quiz
 cd Quiz
 ```
 
-4. install
+3. install
 
 ```
 npm install
 ```
 
-5. development
+4. development
 
 ```
 npm run dev
