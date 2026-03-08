@@ -16,7 +16,11 @@ export function Result() {
 
 	return (
 		<section className={styles.result}>
-			<Pic name={RESULT_PIC[currentTest]} />
+			<Pic
+				className={styles.image}
+				name={RESULT_PIC[currentTest]}
+				alt='Финальная картинка'
+			/>
 			<p>
 				Правильных ответов: {searchParams.get('correct')} из
 				{searchParams.get('length')}

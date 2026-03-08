@@ -59,7 +59,14 @@ export function Game() {
 					className={styles.progress__inner}
 				></div>
 			</div>
-			<Pic name={questionsForTest[step].pic} />
+			<p className={styles.counter}>
+				Вопрос {currentQuestion} из {questionsForTest.length}
+			</p>
+			<Pic
+				className={styles.image}
+				name={questionsForTest[step].pic}
+				alt={`Картинка к вопросу ${currentQuestion}`}
+			/>
 			<h3 className={styles.question}>{questionsForTest[step].question}</h3>
 			<ul className={styles.questionList}>
 				{questionsForTest[step].variants.map((variant, index) => (

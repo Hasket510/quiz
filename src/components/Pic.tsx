@@ -108,8 +108,10 @@ export type TPics = (typeof Pics)[keyof typeof Pics]
 
 interface IPicsProps {
 	name: TPics
+	alt: string
+	className?: string
 }
 
-export function Pic({ name }: IPicsProps) {
-	return <img src={pics[name]} alt={name} />
+export function Pic({ name, alt, className }: IPicsProps) {
+	return <img className={className} src={pics[name]} alt={alt} />
 }

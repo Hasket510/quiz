@@ -17,6 +17,10 @@
 		&:hover {
 			background-color: #0800bb;
 		}
+
+		&:active {
+			background-color: #060099;
+		}
 	}
 
 	p {
@@ -24,7 +28,7 @@
 		font-size: 20px;
 	}
 
-	img {
+	.image {
 		margin-bottom: 20px;
 		max-width: 500px;
 		border-radius: 30px;
