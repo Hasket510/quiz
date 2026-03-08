@@ -1,14 +1,16 @@
 import { useRef, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Pic } from '../../components/Pic'
 import { questions } from '../../questions'
 import styles from './Game.module.scss'
 
-interface IGame {
-	test: string
-}
+export function Game() {
+	const { test } = useParams()
+	const currentTest =
+		test === 'diablo' || test === 'starcraft' || test === 'warcraft'
+			? test
+			: 'warcraft'
 
-export function Game({ test }: IGame) {
 	const questionList = (test: string) => {
 		switch (test) {
 			case 'diablo':
@@ -25,16 +27,22 @@ export function Game({ test }: IGame) {
 	const ref = useRef(0)
 	const [params, setParams] = useSearchParams()
 
-	const percentage = Math.round((step / questionList(test).length) * 100)
+	const percentage = Math.round(
+		(step / questionList(currentTest).length) * 100
+	)
 
 	const choiceVariant = (index: number) => {
 		setParams({ question: (Number(params.get('question')) + 1).toString() })
-		if (index === questionList(test)[step].correct) {
+		if (index === questionList(currentTest)[step].correct) {
 			ref.current++
 		}
-		if (step === questionList(test).length - 1) {
+		if (step === questionList(currentTest).length - 1) {
 			setParams({})
-			nav(`/result?correct=${ref.current}&length=${questionList(test).length}`)
+			nav(
+				`/${currentTest}/result?correct=${ref.current}&length=${
+					questionList(currentTest).length
+				}`
+			)
 		}
 		setStep(step + 1)
 	}
@@ -47,10 +55,12 @@ export function Game({ test }: IGame) {
 					className={styles.progress__inner}
 				></div>
 			</div>
-			<Pic name={questionList(test)[step].pic} />
-			<h3 className={styles.question}>{questionList(test)[step].question}</h3>
+			<Pic name={questionList(currentTest)[step].pic} />
+			<h3 className={styles.question}>
+				{questionList(currentTest)[step].question}
+			</h3>
 			<ul className={styles.questionList}>
-				{questionList(test)[step].variants.map((variant, index) => (
+				{questionList(currentTest)[step].variants.map((variant, index) => (
 					<li
 						className={styles.variant}
 						onClick={() => choiceVariant(index)}
