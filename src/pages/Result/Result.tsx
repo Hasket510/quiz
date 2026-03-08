@@ -21,13 +21,18 @@ export function Result() {
 				name={RESULT_PIC[currentTest]}
 				alt='Финальная картинка'
 			/>
-			<p>
+			<p className={styles.resultNumber}>
 				Правильных ответов: {searchParams.get('correct')} из
 				{searchParams.get('length')}
 			</p>
-			<Link to='/' className={styles.link}>
-				Попробовать снова
-			</Link>
+			<div className={styles.buttonsContainer}>
+				<Link to={`/${currentTest}?question=1`} className={styles.link}>
+					Пройти этот тест ещё раз
+				</Link>
+				<Link to='/' className={styles.link}>
+					Пройти другой тест
+				</Link>
+			</div>
 		</section>
 	)
 }
