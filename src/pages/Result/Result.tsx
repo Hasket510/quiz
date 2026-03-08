@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { EPics, Pic } from '../../components/Pic'
+import { Pics, Pic } from '../../components/Pic'
 import styles from './Result.module.scss'
 
 interface IResult {
@@ -9,11 +9,11 @@ export function Result({ select }: IResult) {
 	const resultPic = (select: string) => {
 		switch (select) {
 			case 'diablo':
-				return EPics.diabloResult
+				return Pics.diabloResult
 			case 'starcraft':
-				return EPics.starCraftResult
+				return Pics.starCraftResult
 			default:
-				return EPics.warCraftResult
+				return Pics.warCraftResult
 		}
 	}
 

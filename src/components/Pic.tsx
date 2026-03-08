@@ -68,44 +68,46 @@ const pics = {
 	starCraftResult: sPicResult,
 }
 
-export enum EPics {
-	warCraftQuestion1 = 'warCraftQuestion1',
-	warCraftQuestion2 = 'warCraftQuestion2',
-	warCraftQuestion3 = 'warCraftQuestion3',
-	warCraftQuestion4 = 'warCraftQuestion4',
-	warCraftQuestion5 = 'warCraftQuestion5',
-	warCraftQuestion6 = 'warCraftQuestion6',
-	warCraftQuestion7 = 'warCraftQuestion7',
-	warCraftQuestion8 = 'warCraftQuestion8',
-	warCraftQuestion9 = 'warCraftQuestion9',
-	warCraftQuestion10 = 'warCraftQuestion10',
-	warCraftResult = 'warCraftResult',
-	diabloQuestion1 = 'diabloQuestion1',
-	diabloQuestion2 = 'diabloQuestion2',
-	diabloQuestion3 = 'diabloQuestion3',
-	diabloQuestion4 = 'diabloQuestion4',
-	diabloQuestion5 = 'diabloQuestion5',
-	diabloQuestion6 = 'diabloQuestion6',
-	diabloQuestion7 = 'diabloQuestion7',
-	diabloQuestion8 = 'diabloQuestion8',
-	diabloQuestion9 = 'diabloQuestion9',
-	diabloQuestion10 = 'diabloQuestion10',
-	diabloResult = 'diabloResult',
-	starCraftQuestion1 = 'starCraftQuestion1',
-	starCraftQuestion2 = 'starCraftQuestion2',
-	starCraftQuestion3 = 'starCraftQuestion3',
-	starCraftQuestion4 = 'starCraftQuestion4',
-	starCraftQuestion5 = 'starCraftQuestion5',
-	starCraftQuestion6 = 'starCraftQuestion6',
-	starCraftQuestion7 = 'starCraftQuestion7',
-	starCraftQuestion8 = 'starCraftQuestion8',
-	starCraftQuestion9 = 'starCraftQuestion9',
-	starCraftQuestion10 = 'starCraftQuestion10',
-	starCraftResult = 'starCraftResult',
-}
+export const Pics = {
+	warCraftQuestion1: 'warCraftQuestion1',
+	warCraftQuestion2: 'warCraftQuestion2',
+	warCraftQuestion3: 'warCraftQuestion3',
+	warCraftQuestion4: 'warCraftQuestion4',
+	warCraftQuestion5: 'warCraftQuestion5',
+	warCraftQuestion6: 'warCraftQuestion6',
+	warCraftQuestion7: 'warCraftQuestion7',
+	warCraftQuestion8: 'warCraftQuestion8',
+	warCraftQuestion9: 'warCraftQuestion9',
+	warCraftQuestion10: 'warCraftQuestion10',
+	warCraftResult: 'warCraftResult',
+	diabloQuestion1: 'diabloQuestion1',
+	diabloQuestion2: 'diabloQuestion2',
+	diabloQuestion3: 'diabloQuestion3',
+	diabloQuestion4: 'diabloQuestion4',
+	diabloQuestion5: 'diabloQuestion5',
+	diabloQuestion6: 'diabloQuestion6',
+	diabloQuestion7: 'diabloQuestion7',
+	diabloQuestion8: 'diabloQuestion8',
+	diabloQuestion9: 'diabloQuestion9',
+	diabloQuestion10: 'diabloQuestion10',
+	diabloResult: 'diabloResult',
+	starCraftQuestion1: 'starCraftQuestion1',
+	starCraftQuestion2: 'starCraftQuestion2',
+	starCraftQuestion3: 'starCraftQuestion3',
+	starCraftQuestion4: 'starCraftQuestion4',
+	starCraftQuestion5: 'starCraftQuestion5',
+	starCraftQuestion6: 'starCraftQuestion6',
+	starCraftQuestion7: 'starCraftQuestion7',
+	starCraftQuestion8: 'starCraftQuestion8',
+	starCraftQuestion9: 'starCraftQuestion9',
+	starCraftQuestion10: 'starCraftQuestion10',
+	starCraftResult: 'starCraftResult',
+} as const
+
+export type TPics = (typeof Pics)[keyof typeof Pics]
 
 interface IPicsProps {
-	name: EPics
+	name: TPics
 }
 
 export function Pic({ name }: IPicsProps) {
