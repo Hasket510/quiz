@@ -18,7 +18,7 @@ export const TEST_WORLDS: readonly TTestWorld[] = [
 export const isValidTestId = (world: string | undefined): world is TTestWorld =>
 	world === 'warcraft' || world === 'diablo' || world === 'starcraft'
 
-export const questionMap: Record<TTestWorld, TQuestion[]> = {
+export const question: Record<TTestWorld, TQuestion[]> = {
 	warcraft: [
 		{
 			question:

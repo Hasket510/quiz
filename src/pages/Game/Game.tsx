@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Pic } from '../../components/Pic'
-import { isValidTestId, questionMap, type TTestWorld } from '../../questions'
+import { isValidTestId, question, type TTestWorld } from '../../questions'
 import styles from './Game.module.scss'
 
 export function Game() {
@@ -12,7 +12,7 @@ export function Game() {
 	const ref = useRef(0)
 	const [searchParams, setSearchParams] = useSearchParams()
 
-	const questionsForTest = questionMap[currentTest]
+	const questionsForTest = question[currentTest]
 
 	const getCurrentQuestion = () => {
 		const questionFromQuery = Number(searchParams.get('question') ?? '1')
