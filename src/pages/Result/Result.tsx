@@ -1,30 +1,22 @@
 import { Link, useParams, useSearchParams } from 'react-router-dom'
-import { Pic, Pics } from '../../components/Pic'
+import { Pic, Pics, type TPics } from '../../components/Pic'
+import { isValidTestId, type TTestWorld } from '../../questions'
 import styles from './Result.module.scss'
+
+const RESULT_PIC: Record<TTestWorld, TPics> = {
+	warcraft: Pics.warCraftResult,
+	diablo: Pics.diabloResult,
+	starcraft: Pics.starCraftResult,
+}
 
 export function Result() {
 	const { test } = useParams()
-	const currentTest =
-		test === 'diablo' || test === 'starcraft' || test === 'warcraft'
-			? test
-			: 'warcraft'
-
-	const resultPic = (test: string) => {
-		switch (test) {
-			case 'diablo':
-				return Pics.diabloResult
-			case 'starcraft':
-				return Pics.starCraftResult
-			default:
-				return Pics.warCraftResult
-		}
-	}
-
+	const currentTest: TTestWorld = isValidTestId(test) ? test : 'warcraft'
 	const [searchParams] = useSearchParams()
 
 	return (
 		<section className={styles.result}>
-			<Pic name={resultPic(currentTest)} />
+			<Pic name={RESULT_PIC[currentTest]} />
 			<p>
 				Правильных ответов: {searchParams.get('correct')} из
 				{searchParams.get('length')}

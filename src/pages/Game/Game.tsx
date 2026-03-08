@@ -1,32 +1,18 @@
 import { useRef } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Pic } from '../../components/Pic'
-import { questions } from '../../questions'
+import { isValidTestId, questionMap, type TTestWorld } from '../../questions'
 import styles from './Game.module.scss'
 
 export function Game() {
 	const { test } = useParams()
-	const currentTest =
-		test === 'diablo' || test === 'starcraft' || test === 'warcraft'
-			? test
-			: 'warcraft'
-
-	const questionList = (test: string) => {
-		switch (test) {
-			case 'diablo':
-				return questions.diablo
-			case 'starcraft':
-				return questions.starcraft
-			default:
-				return questions.warcraft
-		}
-	}
+	const currentTest: TTestWorld = isValidTestId(test) ? test : 'warcraft'
 
 	const nav = useNavigate()
 	const ref = useRef(0)
 	const [searchParams, setSearchParams] = useSearchParams()
 
-	const questionsForTest = questionList(currentTest)
+	const questionsForTest = questionMap[currentTest]
 
 	const getCurrentQuestion = () => {
 		const questionFromQuery = Number(searchParams.get('question') ?? '1')

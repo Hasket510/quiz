@@ -1,17 +1,24 @@
 import { Pics, TPics } from './components/Pic'
 
-type TQuestion = {
+export type TTestWorld = 'warcraft' | 'diablo' | 'starcraft'
+
+export type TQuestion = {
 	question: string
 	variants: string[]
 	correct: number
 	pic: TPics
 }
 
-export const questions: {
-	warcraft: TQuestion[]
-	diablo: TQuestion[]
-	starcraft: TQuestion[]
-} = {
+export const TEST_WORLDS: readonly TTestWorld[] = [
+	'warcraft',
+	'diablo',
+	'starcraft',
+]
+
+export const isValidTestId = (world: string | undefined): world is TTestWorld =>
+	world === 'warcraft' || world === 'diablo' || world === 'starcraft'
+
+export const questionMap: Record<TTestWorld, TQuestion[]> = {
 	warcraft: [
 		{
 			question:
