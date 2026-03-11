@@ -64,7 +64,12 @@ export function Game() {
 
 	return (
 		<section>
-			<div className={styles.progress}>
+			<div
+				className={styles.progress}
+				role='progressbar'
+				aria-valuenow={percentage}
+				aria-label='Прогресс теста'
+			>
 				<div
 					style={{ width: `${percentage}%` }}
 					className={styles.progress__inner}
@@ -81,12 +86,14 @@ export function Game() {
 			<h3 className={styles.question}>{questionsForTest[step].question}</h3>
 			<ul className={styles.questionList}>
 				{questionsForTest[step].variants.map((variant, index) => (
-					<li
-						className={styles.variant}
-						onClick={() => choiceVariant(index)}
-						key={variant}
-					>
-						{variant}
+					<li key={variant}>
+						<button
+							type='button'
+							className={styles.variant}
+							onClick={() => choiceVariant(index)}
+						>
+							{variant}
+						</button>
 					</li>
 				))}
 			</ul>
