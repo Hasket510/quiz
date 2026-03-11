@@ -1,15 +1,16 @@
-import { useRef } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Pic } from '../../components/Pic'
 import { isValidTestId, question, type TTestWorld } from '../../questions'
 import styles from './Game.module.scss'
+
+const PROGRESS_KEY = (world: TTestWorld) => `quiz_${world}_correct`
 
 export function Game() {
 	const { test } = useParams()
 	const currentTest: TTestWorld = isValidTestId(test) ? test : 'warcraft'
 
 	const nav = useNavigate()
-	const ref = useRef(0)
 	const [searchParams, setSearchParams] = useSearchParams()
 
 	const questionsForTest = question[currentTest]
@@ -33,15 +34,25 @@ export function Game() {
 
 	const percentage = Math.round((step / questionsForTest.length) * 100)
 
+	useEffect(() => {
+		if (currentQuestion === 1) {
+			sessionStorage.removeItem(PROGRESS_KEY(currentTest))
+		}
+	}, [currentQuestion, currentTest])
+
 	const choiceVariant = (index: number) => {
+		const key = PROGRESS_KEY(currentTest)
+		let correctCount = Number(sessionStorage.getItem(key) || '0')
+
 		if (index === questionsForTest[step].correct) {
-			ref.current++
+			correctCount++
+			sessionStorage.setItem(key, String(correctCount))
 		}
 
 		if (currentQuestion === questionsForTest.length) {
 			setSearchParams({})
 			nav(
-				`/${currentTest}/result?correct=${ref.current}&length=${
+				`/${currentTest}/result?correct=${correctCount}&length=${
 					questionsForTest.length
 				}`,
 			)

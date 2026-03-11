@@ -22,7 +22,7 @@ export function Result() {
 				alt='Финальная картинка'
 			/>
 			<p className={styles.resultNumber}>
-				Правильных ответов: {searchParams.get('correct')} из
+				Правильных ответов: {searchParams.get('correct')} из{' '}
 				{searchParams.get('length')}
 			</p>
 			<div className={styles.buttonsContainer}>
