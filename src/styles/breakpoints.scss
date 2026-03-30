@@ -1,0 +1,7 @@
+$md: 600px;
+
+@mixin breakpoint($min) {
+	@media (min-width: $min) {
+		@content;
+	}
+}

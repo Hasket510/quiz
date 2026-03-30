@@ -1,10 +1,13 @@
+@use '../../styles/breakpoints' as *;
+
 @mixin link($bg) {
 	box-sizing: border-box;
 	display: flex;
 	align-items: end;
 	justify-content: center;
-	min-width: 200px;
-	min-height: 200px;
+	width: 100%;
+	min-width: 0;
+	min-height: 160px;
 	padding: 10px 20px;
 	border: none;
 	border-radius: 15px;
@@ -17,6 +20,12 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	transition: transform 0.3s ease-in-out;
+
+	@include breakpoint($md) {
+		min-width: 200px;
+		min-height: 200px;
+		width: auto;
+	}
 
 	&:hover {
 		transform: scale(1.1);
@@ -32,10 +41,17 @@
 		margin: 0;
 		padding: 0;
 		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 20px;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 16px;
 		list-style: none;
+
+		@include breakpoint($md) {
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
 
 		& > .item {
 			margin: 0;
